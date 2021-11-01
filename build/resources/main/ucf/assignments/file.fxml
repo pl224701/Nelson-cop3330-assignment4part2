@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane hgap="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.0" minWidth="10.0" prefWidth="464.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.0" minWidth="10.0" prefWidth="224.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" text="Add New List" />
+            <TextField prefHeight="25.0" prefWidth="95.0" promptText="List Title Name" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="1">
+         <children>
+            <Button mnemonicParsing="false" text="Remove Current List" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+         </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="2">
+         <children>
+            <Button mnemonicParsing="false" text="Add Item" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+            <TextField prefHeight="25.0" prefWidth="75.0" promptText="Item Name" />
+            <TextField prefHeight="25.0" prefWidth="103.0" promptText="Item Description" />
+            <DatePicker prefHeight="25.0" prefWidth="115.0" promptText="Enter Date" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="3">
+         <children>
+            <Button mnemonicParsing="false" text="Remove Item" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+            <TextField prefHeight="25.0" prefWidth="86.0" promptText="Item Number" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4" />
+      <HBox prefHeight="30.0" prefWidth="531.0" spacing="5.0" GridPane.rowIndex="6">
+         <children>
+            <Button mnemonicParsing="false" text="Edit Item Description" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+            <TextField prefHeight="25.0" prefWidth="86.0" promptText="Item Number" />
+            <TextField prefHeight="25.0" prefWidth="102.0" promptText="New Description" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="7">
+         <children>
+            <Button mnemonicParsing="false" text="Edit Item Due Date" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+            <TextField prefHeight="25.0" prefWidth="86.0" promptText="Item Number" />
+            <DatePicker prefHeight="25.0" prefWidth="126.0" promptText="Enter New Date" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="5">
+         <children>
+            <Button mnemonicParsing="false" text="Edit List Title" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+            <TextField prefHeight="25.0" prefWidth="65.0" promptText="New Title" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="8">
+         <children>
+            <Button mnemonicParsing="false" text="Mark Item as Complete" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+            <TextField prefHeight="25.0" prefWidth="86.0" promptText="Item Number" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="10">
+         <children>
+            <Button mnemonicParsing="false" text="Display List" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="11">
+         <children>
+            <Button mnemonicParsing="false" text="Display Completed Items" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="12">
+         <children>
+            <Button mnemonicParsing="false" text="Display Incompleted Items" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <children>
+            <Button mnemonicParsing="false" text="Save List" />
+            <TextField prefHeight="25.0" prefWidth="80.0" promptText="List Number" />
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <children>
+            <Button mnemonicParsing="false" text="Save All Lists" />
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Load List" />
+            <TextField prefHeight="25.0" prefWidth="59.0" promptText="File Path" />
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Load Multiple Lists" />
+            <TextField prefHeight="25.0" prefWidth="59.0" promptText="File Path" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>

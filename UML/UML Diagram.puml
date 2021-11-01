@@ -1,0 +1,230 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+@startuml
+class list
+{
+    public static ArrayList<toDoList> lists
+    class toDoList()
+    Title: String
+    Item: String[]
+    Due_Date: String[]
+    Description: String[]
+    Completed: boolean[]
+}
+
+class new_toDoList
+{
+    List: toDoList
+    Title: String
+    Add()
+}
+
+class remove_toDoList
+{
+    List_number: int
+    remove()
+}
+
+class add_item
+{
+    List_number: int
+    Item_name: String
+    Item_description: String
+    Item_due_date: String
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    List: toDoList
+    add()
+}
+
+class remove_item
+{
+    List_number: int
+    Item_number: int
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    List: toDoList
+    remove()
+}
+
+class edit_title
+{
+    List_number: int
+    New_title: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    List: toDoList
+    edit()
+}
+
+class edit_description
+{
+    List_number: int
+    Item_number: int
+    New_description: String
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    List: toDoList
+    edit()
+}
+
+class edit_toDoDate
+{
+    List_number: int
+    Item_number: int
+    New_due_date: String
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    List: toDoList
+    edit()
+}
+
+class complete
+{
+    List_number: int
+    Item_number: int
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    List: toDoList
+    completed()
+}
+
+class sortby
+{
+    List_number: int
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    Temp_item: String
+    Temp_description: String
+    Temp_due_date: String
+    Temp_boolean: String
+    List: toDoList
+    duedate()
+}
+
+class display
+{
+    List_number: int
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    item_display()
+}
+
+class completed_display
+{
+    List_number: int
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    display()
+}
+
+class incompleted_display
+{
+    List_number: int
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    display()
+}
+
+class SingleSave
+{
+    List_number: int
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    File outfile
+    output()
+}
+
+class MultipleSave
+{
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    File outfile
+    output()
+}
+class load_single
+{
+    Path: String
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    Next_line: String
+    i: int
+    List: toDoList
+    load()
+}
+
+class load_multiple
+{
+    Path: String
+    Title_copy: String
+    Items_copy: String[]
+    Description_copy: String[]
+    Due_dates_copy: String[]
+    Completed_copy: boolean[]
+    Next_line: String
+    i: int
+    List: toDoList
+    load()
+}
+
+list o-- new_toDoList
+list o-- remove_toDoList
+list o-- add_item
+list o-- remove_item
+list o-- edit_title
+list o-- edit_description
+list o-- edit_toDoDate
+list o-- complete
+list o-- sortby
+list o-- display
+list o-- completed_display
+list o-- incompleted_display
+list o-- SingleSave
+list o-- MultipleSave
+list o-- load_single
+list o-- load_multiple
+
+
+
+@enduml
