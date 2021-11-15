@@ -4,226 +4,164 @@
 autonumber
 
 @startuml
-class list
+
+class App
 {
-    public static ArrayList<toDoList> lists
-    class toDoList()
-    Title: String
-    Item: String[]
-    Due_Date: String[]
-    Description: String[]
-    Completed: boolean[]
+    fxmlloader: FXMLLoader
+    scene: Scene
+    public static void main(String[] args)
+    public void start(Stage stage)
 }
 
-class new_toDoList
+class Controller
 {
-    List: toDoList
-    Title: String
-    Add()
+    class toDoList
+    String[]: item
+    String[]: description
+    String[]: complete
+    LocalDate[]: due_date
+    toDoList: lists
+    TextField: item_name
+    TextField: item_description
+    DatePicker: item_date
+    TextField: Item_Number1
+    TextField: Item_Number2
+    TextField: Item_Number3
+    TextField: Item_Number4
+    TextField: new_description
+    TextField: file_name
+    TextField: file_path
+    DatePicker: new_date
+    String: item
+    String: description
+    LocalDate: date
+    String: temp
+    int: item_number
+    add_item(ActionEvent event)
+    remove_item(ActionEvent event)
+    clear_items(ActionEvent event)
+    edit_description(ActionEvent event)
+    edit_todoDate(ActionEvent event)
+    complete(ActionEvent event)
+    sort(ActionEvent event)
+    display(ActionEvent event)
+    display_completed(ActionEvent event)
+    display_incomplete(ActionEvent event)
+    save(ActionEvent event)
+    load(ActionEvent event)
 }
 
-class remove_toDoList
+class new_item
 {
-    List_number: int
-    remove()
+    String[]: item
+    String[]: description
+    String[]: complete
+    LocalDate[]: due_date
+    toDoList: list
+    add_item(toDoList lists, String item_name, String item_description, LocalDate date)
 }
 
-class add_item
+class r_item
 {
-    List_number: int
-    Item_name: String
-    Item_description: String
-    Item_due_date: String
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    List: toDoList
-    add()
+    String[]: item
+    String[]: description
+    String[]: complete
+    LocalDate[]: due_date
+    toDoList: list
+    String[]: copy1
+    String[]: copy3
+    String[]: copy4
+    LocalDate[]: copy2
+    remove_item(toDoList lists, int item_number)
 }
 
-class remove_item
+
+class clear
 {
-    List_number: int
-    Item_number: int
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    List: toDoList
-    remove()
+    toDoList list
+    clear_items()
 }
 
-class edit_title
+
+class new_description
 {
-    List_number: int
-    New_title: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    List: toDoList
-    edit()
+    edit_description(toDoList lists, String new_description, int item_number)
 }
 
-class edit_description
+
+class new_doDate
 {
-    List_number: int
-    Item_number: int
-    New_description: String
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    List: toDoList
-    edit()
+    edit_todoDate(toDoList lists, LocateDate date, int item_number)
 }
 
-class edit_toDoDate
+
+class set_complete
 {
-    List_number: int
-    Item_number: int
-    New_due_date: String
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    List: toDoList
-    edit()
+    complete(toDoList lists, int item_number)
 }
 
-class complete
+
+class sort_by_date
 {
-    List_number: int
-    Item_number: int
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    List: toDoList
-    completed()
+    LocalDate: temp1
+    String: temp2
+    String temp3
+    String temp4
+    sort(toDoList lists)
 }
 
-class sortby
+class print
 {
-    List_number: int
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    Temp_item: String
-    Temp_description: String
-    Temp_due_date: String
-    Temp_boolean: String
-    List: toDoList
-    duedate()
+    display(toDoList lists)
 }
 
-class display
+class print_complete
 {
-    List_number: int
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    item_display()
+    display_completed(toDoList lists)
 }
 
-class completed_display
+class print_incomplete
 {
-    List_number: int
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    display()
+    display_incomplete(toDoList lists)
 }
 
-class incompleted_display
+class save_list
 {
-    List_number: int
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    display()
+    File: outfile
+    PrintWriter: pw
+    save(toDoList lists, String file_name)
 }
 
-class SingleSave
+class load_list
 {
-    List_number: int
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    File outfile
-    output()
+    toDoList: list
+    File: file
+    Scanner: sc
+    String[]: read_in
+    Pattern: pat
+    String: line
+    int: i
+    int: j
+    String[]: temp
+    String[]: items
+    String[]: descriptions
+    LocalDate[]: due_dates
+    String[]: completed
+    load(String file_name)
 }
 
-class MultipleSave
-{
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    File outfile
-    output()
-}
-class load_single
-{
-    Path: String
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    Next_line: String
-    i: int
-    List: toDoList
-    load()
-}
-
-class load_multiple
-{
-    Path: String
-    Title_copy: String
-    Items_copy: String[]
-    Description_copy: String[]
-    Due_dates_copy: String[]
-    Completed_copy: boolean[]
-    Next_line: String
-    i: int
-    List: toDoList
-    load()
-}
-
-list o-- new_toDoList
-list o-- remove_toDoList
-list o-- add_item
-list o-- remove_item
-list o-- edit_title
-list o-- edit_description
-list o-- edit_toDoDate
-list o-- complete
-list o-- sortby
-list o-- display
-list o-- completed_display
-list o-- incompleted_display
-list o-- SingleSave
-list o-- MultipleSave
-list o-- load_single
-list o-- load_multiple
+Controller <|-- new_item
+Controller <|-- r_item
+Controller <|-- clear
+Controller <|-- new_description
+Controller <|-- new_doDate
+Controller <|-- set_complete
+Controller <|-- sort_by_date
+Controller <|-- print
+Controller <|-- print_complete
+Controller <|-- print_incomplete
+Controller <|-- save_list
+Controller <|-- load_list
 
 
 

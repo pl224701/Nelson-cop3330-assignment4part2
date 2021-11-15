@@ -11,300 +11,221 @@ Import classes as needed
 
 Create class for todo list
 {
-    Create static array list of toDoLists
+    Create public toDoList
     Create class toDoList
     {
-        Create string value for toDoList title
         Create array of at least 100 strings for list items
-        Create array of at least 100 strings for due dates
+        Create array of at least 100 LocalDates for due dates
         Create array of at least 100 strings for descriptions
-        Create array of at least 100 booleans for if item is completed
-        Use Arrays.fill function set set all the booleans equal to false such that they are marked incomplete
+        Create array of at least 100 strings for if item is completed
     }
-}
-
-Create class to Add lists to the arraylist of todo lists
-{
-    Create method for class on corresponding button press
-    {
-        Create new toDoList
-        Create string for title and set it equal to something for test cases
-        Read list title user input and set it equal to the title of the new toDoList
-        Add list to array list of toDoLists
-    }
-}
-
-Create class to remove lists from the arraylist of todo lists
-{
-    Create method for class on corresponding button press
-    {
-        Create integer to hold user input for list number and set it equal to something for test cases
-        Read user input value for list number and set integer equal to it
-        Remove corresponding toDoList from array list of toDoLists
-    }
+    Create @FXML variables to correspond to the buttons and textfields within the FXML file
+    Create functions that correspond to behaviors OnAction within the FXML file. This is so that you can set the OnAction part of the FXML file in Scene Builder to the functions
+    In each of these functions take in the user input if needed from the GUI/FXML file and use variables to hold them such as Strings, ints, and LocalDates.
+    Then in each function call the corresponding behavior class and if needed set the public toDoList equal to the output from the behavior classes
 }
 
 Create class to add items to an individual todo list
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a toDoList 2 strings and a LocalDate and returns a toDoList
     {
-        Create integer to hold user input value for list number and set it equal to something for test cases
-        Create string to hold string value for the item name and set it equal to something for test cases
-        Create string to hold string value for the item description and set it equal to something for test cases
-        Create string to hold string value for the item due date and set it equal to something for test cases
-        Read user inputs for the corresponding variables and set corresponding variables equal to them
-        Change due date string such that it meets the format "YYYY-MM-DD"
-        Create variables (string, arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Create blank toDoList
-        Create for loop where int i = 0
-            if corresponding strings are equal to null
-                Add user inputed values to the corresponding strings
-                Break statement
-        Set the variables (string, arrays of strings, array of booleans) equal to the corresponding variables in the blank toDoList
-        Use set function in array lists to set the updated toDoList with the new item in the place of the old toDoList
+        Create variables for the corresponding parts of a toDoList (3 arrays of strings and 1 array of LocalDates)
+        Set these variables equal to their corresponding part of the given toDoList
+        Create a toDoList variable
+        Create a for loop
+        {
+            If one of the parts of the toDoList is equal to null
+            {
+                Copy over the given strings and local date to the corresponding array value within the 2 corresponding arrays of strings and array of LocalDates
+                Set the array of strings corresponding to whether the item is completed to incomplete at the given array value
+                break the loop using break
+            }
+        }
+        Set the variables equal to the corresponding parts of the toDoList variable
+        return toDoList
     }
 }
 
 Create class to remove items from an individual todo list
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a toDoList and an integer and returns a toDoList
     {
-        Create integer to hold user input value for list number and set it equal to something for test cases
-        Create integer to hold the input value for item number and set it equal to something for test cases
-        Read user inputs for the corresponding variables and set corresponding integers equal to them
-        Create variables (string, arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Create blank array variables corresponding to the toDoList variables i.e. arrays of strings, array of booleans
-        Create blank toDoList
-        Create for loop where int i = 0 and j=0, i++ in for loop (Loop will remove the item)
-            If i is not equal to item numbers such that you remove the item
-                Copy the copied toDoList values to the blank toDoList array variables (j++ in  this section)
-        Set the variables (string, arrays of strings, array of booleans) equal to the corresponding variables in the blank toDoList
-        Use set function in array lists to set the updated toDoList with the removed item in the place of the old toDoList
+        Create variables for the corresponding parts of a toDoList (3 arrays of strings and 1 array of LocalDates)
+        Set these variables equal to their corresponding part of the given toDoList
+        Create another set of variables corresponding to the parts of a toDoList
+        Create a toDoList variable
+        Create a for loop (int i = 0, int j=0 ;i<100;i++) with two variables but only one being increased by the loop itself
+        {
+            If i is not equal to the given item number
+            {
+                Copy over the given strings and local date to the corresponding array value within the 3 corresponding arrays of strings and array of LocalDates
+                Increase j by one
+            }
+        }
+        Set the variables equal to the corresponding parts of the toDoList variable
+        return toDoList
     }
 }
 
-Create class to edit titles of a todo list
+Create class to clear all items from an individual todo list
 {
-    Create method for class on corresponding button press
+    Create method for the class that returns a toDoList
     {
-        Create integer to hold user input for list number and set it equal to something for test cases
-        Create string for new title and set it equal to something for test cases
-        Read user input for the list number and new title and set corresponding variables equal to them
-        Create variables (arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Create blank toDoList
-        Set the variables equal to the corresponding variables in the blank toDoList
-        Set user inputed title equal to title in new toDoList
-        Use set function in array lists to set the updated toDoList with the new title in the place of the old toDoList
+        Create a empty toDoList
+        return the empty toDoList
     }
 }
 
 Create class to edit descriptions of items in a todo list
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a toDoList, a string, and an integer and returns a toDoList
     {
-        Create integer to hold user input for list number and set it equal to something for test cases
-        Create integer to hold user input for item number and set it equal to something for test cases
-        Create string for new description
-        Read user input for the list number, item number, and new description and set corresponding variables equal to them
-        Create variables (arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Create blank toDoList
-        Set user inputed description equal to corresponding string in the copied array of strings for description
-        Set the variables equal to the corresponding variables in the blank toDoList
-        Use set function in array lists to set the updated toDoList with the new description in the place of the old toDoList
+        Set the String value within the toDoLists array of descriptions at the corresponding array value that is the given integer to the string
+        return the toDoList
     }
 }
 
 Create class to edit due date of items in a todo list
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a toDoList, a LocalDate, and an integer and returns a toDoList
     {
-        Create integer to hold user input for list number and set it equal to something for test cases
-        Create integer to hold user input for item number and set it equal to something for test cases
-        Create string for new due date
-        Read user input for the list number, item number, and due date and set corresponding variables equal to them
-        Change new due date string such that it meets the format "YYYY-MM-DD"
-        Create variables (arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Create blank toDoList
-        Set user inputed due date equal to corresponding string in the copied array of strings for due date
-        Set the variables equal to the corresponding variables in the blank toDoList
-        Use set function in array lists to set the updated toDoList with the new due date in the place of the old toDoList
+        Set the LocalDate value within the toDoLists array of due dates at the corresponding array value that is the given integer to the LocalDate
+        return the toDoList
     }
 }
 
 Create class to mark items in a todo list as complete
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a toDoList, and an integer and returns a toDoList
     {
-        Create integer to hold user input for list number and set it equal to something for test cases
-        Create integer to hold user input for item number and set it equal to something for test cases
-        Read user input for the list number and item number and set corresponding integers equal to that
-        Create variables (arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Create blank toDoList
-        Set corresponding boolean in the copied array of booleans to true such that it is marked as completed
-        Set the variables equal to the corresponding variables in the blank toDoList
-        Use set function in array lists to set the updated toDoList with the item marked as completed in the place of the old toDoList
+        Set the string value within the toDoLists array of complete at the corresponding array value that is the given integer to "completed"
+        return the toDoList
     }
 }
 
 Create a class to sort all of the items by due date in a todo list
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a toDoList and returns a toDoList
     {
-        Create integer to hold user input for list number and set it equal to something for test cases
-        Read user input for the list number and set the integer equal to it
-        Create variables (arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Create blank toDoList
-        Create for loop
-        Create outer for loop where int i=0 // This method works because the dates are reordered in the YYYY-MM-DD format
-            Create inner for loop where int j=i+1
-                If variable strings are not equal to null AND the due date for i is greater than the due date for j
-                    Create 3 temporary strings for item, description, and due date and set them equal to the corresponding i in the array of strings
-                    Create temporary boolean and set it equal to the corresponding i in the array of booleans
-                    Set the arrays of strings at i equal to the arrays of strings at j
-                    Set the array of booleans at i equal to the array of booleans at j
-                    Set the arrays of strings at j equal to the temporary strings
-                    Set the array of booleans at j equal to the temporary boolean
+        Create three string variables and one LocalDate variable that are meant to hold variables
+        Create a for loop (int i = 0; i<100; i++)
+        {
+            Create another for loop (int j=i+1;j<100;j++)
+            {
+                if the next items within the toDoLoop are not null
+                {
+                    if the due date for the corresponding j within the array of due dates is further in the future than the one corresponding to i
+                    {
+                        Copy over the corresponding i variables in the arrays to the holding variables
+                        Set the toDoLists variables at array iteration i to array iteration j
+                        Set the array iteration j to the holding variables
+                    }
+                }
+            }
+        }
+        return the toDoList
     }
-    Set the variables equal to the corresponding variables in the blank toDoList
-    Use set function in array lists to set the updated toDoList with the sorted list in the place of the old toDoList
+
 }
 
 Create class to display all of the items in a todo list
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a toDoList
     {
-        Create integer to hold user input for list number and set it equal to something for test cases
-        Read user input for the list number and set integer equal to it
-        Create variables (string, arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Print list title
-        Create for loop such that int i = 0 (iterate through each element of such that all items are printed)
-            If string values are not null
-                 Print output for the corresponding elements within arrays in the format item, description, due date
+        Create for loop(int i = 0;i<100;i++)
+        {
+            if the current iteration of variables (i) within the toDoList is not equal to null
+            {
+                Display the current iteration of variables by printing them to the console
+            }
+        }
+        Print a new line so there is space between different printed lists/list item sets
     }
 }
 
 Create class to display all of the completed items in a todo list
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a toDoList
     {
-        Create integer to hold user input for list number and set it equal to something for test cases
-        Read user input for the list number and set integer equal to it
-        Create variables (string, arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Print list title
-        Create for loop such that int i = 0 (iterate through each element of such that all items are printed)
-            If string values are not null AND corresponding boolean values for the given i value are true (because loop iterates through all values in the arrays)
-                 Print output for the corresponding elements within arrays in the format item, description, due date
+        Create for loop(int i = 0;i<100;i++)
+        {
+            if the current iteration of variables (i) within the toDoList is not equal to null
+            {
+                if the current item (i) is completed
+                {
+                    Display the current iteration of variables by printing them to the console
+                }
+            }
+        }
+        Print a new line so there is space between different printed lists/list item sets
     }
 }
 
-Create class to display all of the incompleted items in a todo list
+Create class to display all of the incomplete items in a todo list
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a toDoList
     {
-        Create integer to hold user input for list number and set it equal to something for test cases
-        Read user input for the list number and set integer equal to it
-        Create variables (string, arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Print list title
-        Create for loop such that int i = 0 (iterate through each element of such that all items are printed)
-            If string values are not null AND corresponding boolean values for the given i value are false (because loop iterates through all values in the arrays)
-                 Print output for the corresponding elements within arrays in the format item, description, due date
+        Create for loop(int i = 0;i<100;i++)
+        {
+            if the current iteration of variables (i) within the toDoList is not equal to null
+            {
+                if the current item (i) is incomplete
+                {
+                    Display the current iteration of variables by printing them to the console
+                }
+            }
+        }
+        Print a new line so there is space between different printed lists/list item sets
     }
 }
 
-Create class to save all of the items to external storage for a single todo list
+Create class to save a todo List
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a toDoList and a string
     {
-        Create integer to hold user input for list number and set it equal to something for test cases
-        Read user input for the list number and set integer equal to it
-        Create variables (string, arrays of strings, array of booleans) to hold specified toDoList variables
-        Copy all of the toDoList values for the specified list to specified variables i.e. string, arrays of strings, array of booleans
-        Create outfile
-        Print list title to outfile
-        Create for loop such that int i = 0 (iterate through each element of such that all items are printed)
-            If string values are not null
-                 Print output to outfile for the corresponding elements within arrays in the format item, description, due date, completed(where true is completed false is incomplete)
+        Create an file variable, outfile
+        Check if the outfile exists, if it doesn't create a new one with the string as its name
+        Create a PrintWriter variable
+        Create a for loop (int i=0;i<100;i++)
+        {
+            if the current iteration of variables in the toDoList is not equal to null
+            {
+                print the variables into the outfile separated by a comma
+            }
+        }
+        close the outfile
     }
 }
 
-Create class to save all of the items to external storage for all of the todo lists
-{
-    Create method for class on corresponding button press
-    {
-        Create variables (string, arrays of strings, array of booleans) to hold specified toDoList variables
-        Create outfile
-        Print list title to outfile
-        Create integer that equals length of arraylist
-        Print string denoting end of individual list to outfile so that you can read it back in later
-        Create for loop such that int i = 0 less than length of the arraylist and i++(iterate through each list such that all lists are printed)
-            Copy all of the toDoList values for the specified list (j) to specified created variables i.e. string, arrays of strings, array of booleans
-            Print list title to outfile
-            Create for loop such that int j = 0 (iterate through each element of such that all items are printed)
-                If string values are not null
-                    Print output to outfile for the corresponding elements within arrays in the format item, description, due date, completed(where true is completed false is incomplete)
-            Print string denoting end of individual list to outfile
-    }
-}
 
-Create class to load a single todo list from storage
+Create class to load a todo List
 {
-    Create method for class on corresponding button press
+    Create method for the class that takes in a string and returns a toDoList
     {
-        Create string for user inputed file path and set it equal to something for test cases
-        Read user inputed file path and set string equal to it
-        Create file variable that will equal the file path
-        Create scanner variable
-        Create variables (string, arrays of strings, array of booleans) to hold specified toDoList variables
-        Set title equal to first string within the file
-        Create integer to increase in while loop
-        Create while loop such that it ends when the next line in the file is null
-            Create string to hold next line
-            Read in next line of the file
-            Create array of strings to hold separated string
-            Separate string based upon ","
-            Set corresponding values within the array of string to each variables (item, description, due date, completed)
-            Increase integer value
-        Create blank toDoList
-        Set the variables equal to the corresponding variables in the blank toDoList
-        Add new toDoList to array list of toDoLists
-        Close the scanner variable
-    }
-}
-
-Create class to load multiple todo lists from storage
-{
-    Create method for class on corresponding button press
-    {
-        Create string for user inputed file path and set it equal to something for test cases
-        Read user inputed file path and set string equal to it
-        Create file variable that will equal the file path
-        Create scanner variable
-        Create variables (string, arrays of strings, array of booleans) to hold specified toDoList variables
-        Create while loop such that it ends when next line in file is null
-            Read next line such that you avoid string denoting the end of individual lists
-            Set title equal to first string within the file
-            Create integer to increase in while loop
-            Create while loop such that it ends when the next line is equal to the string denoting the end of an individual list or is equal to null
-                Create string to hold next line
-                Read in next line of the file
-                Create array of strings to hold separated string
-                Separate string based upon ","
-                Set corresponding values within the array of string to each variables (item, description, due date, completed)
-                Increase integer value
-            Create blank toDoList
-            Set the variables equal to the corresponding variables in the blank toDoList
-            Add new toDoList to array list of toDoLists
-        Close the scanner variable
+        Create a toDoList to hold the loaded toDoList
+        Create a file variable with the string as its input
+        Create a scanner variable
+        Create an array of strings to read in the file
+        Create a pattern to sort through the file as its read in
+        Create a string
+        Create an integer i thats starts at 0
+        Create a while loop such that the next line in the file is not null
+        {
+            Set the array of strings equal to the next line within the file
+            Increment i by one
+        }
+        Create an array of strings: temp
+        Create an integer j that starts at 0
+        Create variables corresponding to the variables in a toDoList
+        Create a while loop
+        {
+            Set the array of strings equal to array of strings read in by the file but split based on a comma
+            For the last loaded variable by the temp array, if the item contains complete set it to "complete" and if it contains incomplete set it to "incomplete" to get rid of new lines on the string
+            Copy corresponding variables within temp to the corresponding variables as per the toDoList
+            Increment j by one
+        }
+        Set the corresponding variables for the toDoList equal to the variables within the toDoList
+        return the toDoList
     }
 }
 */

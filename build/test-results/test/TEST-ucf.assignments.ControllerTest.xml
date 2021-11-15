@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ucf.assignments.ControllerTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-11-15T14:41:33" hostname="QUENTIN-PC" time="0.071">
+  <properties/>
+  <testcase name="DisplayIncompleteTest()" classname="ucf.assignments.ControllerTest" time="0.037"/>
+  <testcase name="SaveTest()" classname="ucf.assignments.ControllerTest" time="0.003"/>
+  <testcase name="DoDateTest()" classname="ucf.assignments.ControllerTest" time="0.001"/>
+  <testcase name="RemoveTest()" classname="ucf.assignments.ControllerTest" time="0.001"/>
+  <testcase name="DisplayTest()" classname="ucf.assignments.ControllerTest" time="0.002"/>
+  <testcase name="CompleteTest()" classname="ucf.assignments.ControllerTest" time="0.001"/>
+  <testcase name="DescriptionTest()" classname="ucf.assignments.ControllerTest" time="0.001"/>
+  <testcase name="AddTest()" classname="ucf.assignments.ControllerTest" time="0.001"/>
+  <testcase name="ClearTest()" classname="ucf.assignments.ControllerTest" time="0.002"/>
+  <testcase name="DisplayCompleteTest()" classname="ucf.assignments.ControllerTest" time="0.002"/>
+  <testcase name="SortTest()" classname="ucf.assignments.ControllerTest" time="0.003"/>
+  <testcase name="LoadTest()" classname="ucf.assignments.ControllerTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
